@@ -60,12 +60,18 @@ namespace App
         {
             try
             {
-                pictureBoxArticulos.Load(img);
+                if (!string.IsNullOrEmpty(img))
+                {
+                    pictureBoxArticulos.Load(img);
+                }
+                else
+                {
+                    pictureBoxArticulos.Load("https://mexicana.cultura.gob.mx/work/models/repositorio/img/empty.jpg");
+                }
             }
-            catch
+            catch (Exception ex)
             {
                 pictureBoxArticulos.Load("https://mexicana.cultura.gob.mx/work/models/repositorio/img/empty.jpg");
-
             }
         }
 
